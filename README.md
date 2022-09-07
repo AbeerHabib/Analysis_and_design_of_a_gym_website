@@ -50,37 +50,48 @@
 
 
 1. Membership table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892566-dd7fa874-e13f-42eb-9c75-201cac49a129.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925129-71efd9a9-c1f4-4f12-a9d1-467fa911e538.png"/></p>
 
 2. Customer table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892579-60b6c699-70c3-4fe1-9a41-80fb25e9945f.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925209-afef5baa-7cda-4951-adff-05b9ad8d4af6.png"/></p>
 
 3. Customer_phone_number table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892606-b5461118-b39f-4d77-a48c-906c56f8d619.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925316-5e8300d4-d130-48cb-a345-12adc859b448.png"/></p>
 
 4. Measurments table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892632-618ba0b0-6ddf-4237-943e-29a994d3d383.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925379-94dd3492-0450-46f4-9d78-ee55678b8815.png"/></p>
 
 5. Trainer table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892652-2b835e55-06ae-4798-8a5d-21f3ba3fc21c.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925467-9bed548e-0d03-4150-8b94-0c3d6ecbe1c7.png"/></p>
 
 6. trainer_phone_number table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892671-c5259e28-d67e-4dd3-86b4-b0065427ab31.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925612-614a20fd-54e3-460c-b4bf-817a196edf63.png"/></p>
 
 7. Class table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892697-7451a932-72a5-447f-980e-8c5349bf7da1.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925684-cb4a3638-ed47-4cc5-89d9-3348c13141b7.png"/></p>
 
 8. take_class table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892719-bfcb414f-6699-455f-bdcb-b2f76191cc8d.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925756-ae50b540-97f1-4f2a-8aad-a5fae7ef8364.png"/></p>
 
 9. exercises_reports table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892736-90ca309b-bae2-42a1-85b5-f9a58c48e53f.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925883-bb294bc9-e260-4c67-a2d0-fc24dc1bab7c.png"/></p>
 
 10. managing_exercises_reports table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892760-1096e415-503b-4717-9a38-6849531518ed.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188925941-4b84c0fb-c567-404c-b4a8-592689f462b9.png"/></p>
 
 11. viewing_exercises_reports table
-<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188892776-1734a48f-4584-4775-9d3d-c9190678154e.png"/></p>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/85819577/188926035-5a25418c-4883-4c39-a64a-5a134fa92702.png"/></p>
 
 # CLASS DIAGRAM
 
