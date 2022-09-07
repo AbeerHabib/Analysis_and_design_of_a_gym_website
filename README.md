@@ -116,8 +116,8 @@ ________________________________________________________________________________
 Team Members:
 <ul>
 <li>Abeer Alnakhli</li>
-<li>Doaa Alahmadi</li>
-<li>Maryam Majrashi</li>
-<li>Maryam Alharbi</li>
+<li>Duaa Alahmadi</li>
+<li>Mariam Magrashi</li>
+<li>Mariam Alharbi</li>
 <li>Sara Alharbi</li>
 </ul>
