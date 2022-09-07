@@ -111,3 +111,13 @@ there is a "many to many" relation between <b>customer & exercises_reports, trai
 
 <p align="center"><img src="https://user-images.githubusercontent.com/85819577/188888454-c02e8ce4-b4d2-418e-a5f1-a55e675e2602.png" width="750" height="700"/></p>
 
+________________________________________________________________________________________________________________
+
+Team Members:
+<ul>
+<li>Abeer Alnakhli</li>
+<li>Doaa Alahmadi</li>
+<li>Maryam Majrashi</li>
+<li>Maryam Alharbi</li>
+<li>Sara Alharbi</li>
+</ul>
