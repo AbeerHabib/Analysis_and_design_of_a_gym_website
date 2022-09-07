@@ -1,0 +1,187 @@
+CREATE TABLE membership (  
+Membership_id    NUMBER(10), 
+  Status           VARCHAR2(10), 
+  Start_date       DATE, 
+  End_date         DATE, 
+  Payment_amount   NUMBER(10), 
+  Payment_type     VARCHAR2(20) DEFAULT 'cash', 
+  CONSTRAINT m_sh_id_pk PRIMARY KEY(Membership_id) ); 
+ 
+ 
+CREATE TABLE customer (  
+Member_id       NUMBER(10), 
+  Membership_id   NUMBER(10), 
+  First_name      VARCHAR2(10), 
+  Last_name       VARCHAR2(20), 
+  Username        VARCHAR2(20), 
+  Password        VARCHAR2(15), 
+  Email           VARCHAR2(20), 
+  Address         VARCHAR2(30), 
+  Gender          VARCHAR2(6), 
+  Date_of_Birth   DATE, 
+  CONSTRAINT m_id_pk PRIMARY KEY(Member_id), 
+  CONSTRAINT m_sh_fk FOREIGN KEY(Membership_id) REFERENCES membership(Membership_id) ); 
+ 
+ 
+CREATE TABLE Customer_phone_number (  
+Member_id      NUMBER(10), 
+C_phone_num    VARCHAR2(10), 
+CONSTRAINT memberid_cphonenum_pk PRIMARY KEY(Member_id,C_phone_num) ); 
+ 
+ 
+CREATE TABLE Measurments (   
+Member_id     NUMBER(10), 
+Weight        VARCHAR2(5), 
+Hight         VARCHAR2(5), 
+M_date        DATE DEFAULT SYSDATE, 
+Waist         VARCHAR2(5), 
+CONSTRAINT c_w_id_fk PRIMARY KEY(Weight ,Member_id )); 
+ 
+ 
+CREATE TABLE trainer (  
+Trainer_id    NUMBER(10), 
+  First_name    VARCHAR2(10), 
+  Last_name     VARCHAR2(20), 
+  Username      VARCHAR2(20), 
+  Password      VARCHAR2(15), 
+  Email         VARCHAR2(20), 
+  Address       VARCHAR2(30),   Gender        VARCHAR2(6),   date_of_Birth DATE , 
+  Major         VARCHAR2(20), 
+  CONSTRAINT t_id_pk PRIMARY KEY(Trainer_id));  
+ 
+ 
+CREATE TABLE trainer_phone_number (  
+Trainer_id    NUMBER(10), 
+T_phone_num   VARCHAR2(10), 
+CONSTRAINT tid_tphonenum_pk PRIMARY KEY(Trainer_id,T_phone_num) ); 
+ 
+ 
+CREATE TABLE class (  
+Class_id      NUMBER(10), 
+Types         VARCHAR2(20), 
+Days          VARCHAR2(20), 
+Start_time    VARCHAR2(10), 
+End_time      VARCHAR2(10), 
+Trainer_id    NUMBER(10), 
+CONSTRAINT c_id_pk PRIMARY KEY(Class_id), 
+CONSTRAINT t_id_fk FOREIGN KEY(Trainer_id) REFERENCES trainer(Trainer_id) );  
+ 
+ 
+CREATE TABLE take_class (  
+Member_id    NUMBER(10), 
+Class_id     NUMBER(10), 
+C_date       DATE , 
+CONSTRAINT mid_cid_pk PRIMARY KEY(Member_id,Class_id) );  
+ 
+CREATE TABLE exercises_reports(  
+Exercise_id    NUMBER(10), 
+  Exercise_type  VARCHAR2(20), 
+  Title          VARCHAR2(50), 
+  Details        VARCHAR2(200), 
+  CONSTRAINT e_id_pk PRIMARY KEY(Exercise_id) ); 
+CREATE TABLE managing_exercises_reports (  
+Trainer_id     NUMBER(10), 
+Exercise_id    NUMBER(10), 
+CONSTRAINT tid_eid_pk PRIMARY KEY(Trainer_id,Exercise_id) ); 
+ 
+ 
+CREATE TABLE viewing_exercises_reports (  
+Member_id    NUMBER(10), 
+Exercise_id  NUMBER(10), 
+CONSTRAINT mid_eid_pk PRIMARY KEY(Member_id,Exercise_id) ); 
+ 
+
+****************************************************************** 
+ 
+
+INSERT INTO membership VALUES( 1, 
+'Active',TO_DATE('22/2/2019','DD/MM/YYYY'), 
+TO_DATE('22/2/2020','DD/MM/YYYY'),899, 'card: VISA'); 
+INSERT INTO membership VALUES( 2, 
+'Expired',TO_DATE('6/5/2019','DD/MM/YYYY'), 
+TO_DATE('6/6/2019','DD/MM/YYYY'),120,  DEFAULT); 
+INSERT INTO membership VALUES( 3, 'Cancelled', 
+TO_DATE('3/10/2019','DD/MM/YYYY') 
+,TO_DATE('9/10/2019','DD/MM/YYYY'),50,  DEFAULT); 
+INSERT INTO membership VALUES( 4,'Active',TO_DATE('9/12/2019','DD/MM/YYYY'), TO_DATE('9/12/2020','DD/MM/YYYY'),899,'cash');
+	INSERT INTO membership VALUES( 5, 'Active',TO_DATE('7/1/2019','DD/MM/YYYY'), TO_DATE('7/1/2020','DD/MM/YYYY'),899,'card: VISA');
+
+ 
+INSERT INTO customer VALUES(111,1,'Amal','ahmad','Amal_a','1234', 
+'amal@hotmail.com', 'Madinah','Female', 
+TO_DATE('30/10/1996','DD/MM/YYYY')); 
+INSERT INTO customer 
+VALUES(112,2,'Maram','Khaled','Maram_k','1223','Maram_k@hotmail.com', 
+'Madinah','Female',TO_DATE('1/5/1990','DD/MM/YYYY')); 
+INSERT INTO customer 
+VALUES(113,3,'Nouf','Khaled','nouf_Khaled','1233','nouf@hotmail.com', 
+'Madinah','Female',TO_DATE('6/8/1999','DD/MM/YYYY')); 
+INSERT INTO customer VALUES(114,4,'hajer','fahad','hajer_f','1227', 'hajer@hotmail.com', 'Madinah','Female',TO_DATE('4/10/1995','DD/MM/YYYY'));
+INSERT INTO customer VALUES(115,5,'sara','salem','sara_s','1222', 'sara@hotmail.com', 'Madinah','Female',TO_DATE('8/12/1998','DD/MM/YYYY'));
+
+ 
+INSERT INTO Customer_phone_number VALUES(111,'0552445556'); 
+INSERT INTO Customer_phone_number VALUES(112,'0569988832'); INSERT INTO Customer_phone_number VALUES(113,'0545888963'); 
+INSERT INTO Customer_phone_number VALUES(114,'0567983478');
+INSERT INTO Customer_phone_number VALUES(115,'0580665439'); 
+ 
+INSERT INTO  Measurments VALUES(111,'54','155', DEFAULT, '56');  
+INSERT INTO  Measurments VALUES(112,'77','160', DEFAULT, '76');  
+INSERT INTO  Measurments VALUES(113,'44','157', DEFAULT, '57');                              
+INSERT INTO Measurments VALUES(114,'80','175', DEFAULT, '11');
+INSERT INTO Measurments VALUES(115,'60','150', DEFAULT, '4');
+ 
+INSERT INTO trainer 
+VALUES(211,'maha','fahad','maha_f','1552','maha@gmail.com','madinah','Female
+', TO_DATE('22/7/1985','DD/MM/YYYY'),'Personal training'); 
+INSERT INTO trainer 
+VALUES(212,'shoq','ahmad','shoq_a','1993','shoq@gmail.com','madinah','Female'
+,TO_DATE('6/6/1984','DD/MM/YYYY'),'Personal training'); 
+INSERT INTO trainer VALUES(213,'hind','ali','hind_a', 'ali' *error*, 
+'hind@hotmail.com','madinah','Female',TO_DATE('9/1/1986','DD/MM/YYYY'),' Personal training'); 
+ INSERT INTO trainer VALUES(214,'hanan','aadam','hanan_a','1987','hanan@gmail.com','madinah','Female', TO_DATE('2/5/1987','DD/MM/YYYY'),'Personal training');
+INSERT INTO trainer VALUES(215,'aisha','anas','aisha_a','1765','aisha@gmail.com','madinah','Female',TO_DATE('10/9/1983','DD/MM/YYYY'),'Personal training');
+
+INSERT INTO trainer_phone_number VALUES(211,'0546669999'); 
+INSERT INTO trainer_phone_number VALUES(212,'0536588897'); INSERT INTO trainer_phone_number VALUES(213,'0565598888'); 
+ INSERT INTO trainer_phone_number VALUES(214,'0548975432');
+INSERT INTO trainer_phone_number VALUES(215,'0552388890');
+
+ 
+INSERT INTO class VALUES(311,'YOGA','TUESDAY','1:00 PM','1:45 PM',211); 
+INSERT INTO class VALUES(312,'BEGINNERS BOXING','MONDAY','3:00 
+PM ','3:45 PM',212); 
+INSERT INTO class VALUES(313,'KI-YOGA','THURSDAY','9:00 AM','9:45 AM',213); 
+ INSERT INTO class VALUES(314,'DANSE','SUNDAY','1:00 PM','1:45 PM',214);
+INSERT INTO class VALUES(315,'Gymnastics','Wednesday','3:00 PM ','3:45 PM',215);
+
+
+INSERT INTO take_class VALUES(111,312, TO_DATE('20/12/2019','DD/MM/YYYY')); 
+INSERT INTO take_class VALUES(113,311, TO_DATE('18/12/2019','DD/MM/YYYY')); 
+INSERT INTO take_class VALUES(112,313, 
+TO_DATE('25/12/2019','DD/MM/YYYY')); 
+INSERT INTO take_class VALUES(114,314, TO_DATE('8/12/2019','DD/MM/YYYY'));
+INSERT INTO take_class VALUES(115,315, TO_DATE('15/12/2019','DD/MM/YYYY'));
+
+ 
+INSERT INTO exercises_reports VALUES(411,'Flexibility','Flexibility exercises','Flexibility exercises include: 1-Shoulder and upper arm stretch 2- Calf stretch 3-Yoga'); 
+INSERT INTO exercises_reports VALUES(412,'Strength','Strength 
+exercises','Strength exercises 1-include:Lifting weights 2- Using a resistance band 3- Using your own body weight'); 
+INSERT INTO exercises_reports VALUES(413,'Balance','Balance 
+exercises','Balance exercises include: 1- Standing on one foot 2- Heel-to-toe walk 3- Tai Chi'); 
+ INSERT INTO exercises_reports VALUES(414,'Resistance','Resistance exercises','Resistance exercises include: 1-Free weights 2- Club equipment' );
+INSERT INTO exercises_reports VALUES(415,'Cardio','Cardio exercises','Cardio exercises 1-trot 2- Zumba');
+ 
+
+INSERT INTO  managing_exercises_reports VALUES(312,412); 
+INSERT INTO  managing_exercises_reports VALUES(311,413); INSERT INTO  managing_exercises_reports VALUES(313,411); 
+INSERT INTO managing_exercises_reports VALUES(314,414);
+INSERT INTO managing_exercises_reports VALUES(315,415);
+ 
+ 
+
+INSERT INTO  viewing_exercises_reports VALUES(111, 411); 
+INSERT INTO  viewing_exercises_reports VALUES(112, 412); 
+INSERT INTO  viewing_exercises_reports VALUES(113, 413); 
+INSERT INTO viewing_exercises_reports VALUES(114, 414);
+INSERT INTO viewing_exercises_reports VALUES(115, 415);
